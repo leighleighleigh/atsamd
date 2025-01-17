@@ -425,6 +425,14 @@ impl InterruptDrivenTimer for Rtc<Count32Mode> {
         }
     }
 
+    fn count(&self) -> u32 {
+        self.count32()
+    }
+
+    fn retrigger(&mut self) {
+        // not applicable here
+    }
+
     /// Disables interrupt generation for this hardware timer.
     /// This method only sets the clock configuration to prevent
     /// triggering the interrupt; it does not configure the interrupt

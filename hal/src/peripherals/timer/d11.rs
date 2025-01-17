@@ -145,6 +145,17 @@ where
         }
     }
 
+    fn count(&self) -> u32 {
+        let count : &Count16Reg = self.tc.count_16();
+        count.count().read().count().bits().into()
+    }
+
+    fn retrigger(&mut self) {
+        // write a RETRIGGER 0x1 command to the CTRLBSET register,
+        // which is equivalent to setting a 1 in bit 7 of the 8-bit reg.
+        self.tc.count_16().ctrlbset().write(|w| w.cmd().retrigger());
+    }
+
     /// Disables interrupt generation for this hardware timer.
     /// This method only sets the clock configuration to prevent
     /// triggering the interrupt; it does not configure the interrupt
