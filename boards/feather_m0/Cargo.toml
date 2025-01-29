@@ -37,7 +37,7 @@ version = "0.3"
 optional = true
 
 [dev-dependencies]
-embassy-executor = { version = "0.7.0", features = ["arch-cortex-m", "executor-thread", "task-arena-size-64", "nightly"] }
+embassy-executor = { version = "0.7.0", features = ["arch-cortex-m", "executor-thread", "task-arena-size-256", "nightly"] }
 embassy-time = "0.4.0"
 rtic = { version = "2.1.1", features = ["thumbv6-backend"] }
 rtic-monotonics = { version = "1.3.0", features = ["cortex-m-systick", "systick-10khz"] }
