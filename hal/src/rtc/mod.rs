@@ -20,6 +20,10 @@ mod modes;
 #[cfg(feature = "rtic")]
 pub mod rtic;
 
+#[cfg(feature = "rtic")]
+#[cfg(feature = "embassy-time-driver")]
+pub mod time_driver;
+
 // SAMx5x imports
 #[hal_cfg("rtc-d5x")]
 use crate::pac::{

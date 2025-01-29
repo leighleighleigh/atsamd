@@ -1,4 +1,5 @@
 #![no_std]
+#![feature(impl_trait_in_assoc_type)]
 
 use embedded_hal_02 as ehal_02;
 pub use embedded_hal_1 as ehal;
